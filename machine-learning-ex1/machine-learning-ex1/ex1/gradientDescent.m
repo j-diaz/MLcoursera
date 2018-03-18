@@ -24,12 +24,10 @@ for iter = 1:num_iters
     temp_1 = theta(2) - ( (alpha/m) * sum(err .* X(:,2)));
     theta(1) = temp_0;
     theta(2) = temp_1;
-
-
     % ============================================================
 
     % Save the cost J in every iteration
-    J_history(iter) = computeCost(X, y, theta);
+    J_history(iter) = J;
 
 end
 
