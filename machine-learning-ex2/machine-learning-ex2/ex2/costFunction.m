@@ -20,11 +20,11 @@ alpha = 0.01;
 % Note: grad should have the same dimensions as theta
 %
 h = sigmoid(X * theta);
-J = ( (-1 * y)' * log(h) - (1 - y)' * log(1 - h)) * (1 / m);
+J = ((-1 * y)' * log(h) - (1 - y)' * log(1 - h)) * (1 / m);
 
 theta = theta - ( (alpha/m) * X' * (h - y) );
 
-grad = ((X') * (h - y) ) * (1 / m);
+grad = ((X') * (h - y)) * (1 / m);
 
 % =============================================================
 

@@ -11,7 +11,7 @@ theta = zeros(size(X, 2), 1);
 %
 
 % ---------------------- Sample Solution ----------------------
-sprintf('tu nunca sabes');
+sprintf('Using normal equantion');
 theta = pinv(X' * X) * X' * y
 
 

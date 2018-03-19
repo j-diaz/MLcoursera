@@ -19,9 +19,9 @@ for iter = 1:num_iters
     %
     J  = computeCost(X, y, theta);
     predictions = X*theta;
-    err = predictions -  y;
-    temp_0 = theta(1) - ( (alpha/m) * sum(err));
-    temp_1 = theta(2) - ( (alpha/m) * sum(err .* X(:,2)));
+    errors = predictions -  y;
+    temp_0 = theta(1) - ( (alpha/m) * sum(errors) );
+    temp_1 = theta(2) - ( (alpha/m) * sum(errors .* X(:,2)) );
     theta(1) = temp_0;
     theta(2) = temp_1;
     % ============================================================
