@@ -32,10 +32,9 @@ X = [ones(m, 1) X];
 fprintf('all_theta size rows=%d cols=%d\n', size(all_theta, 1), size(all_theta, 2));
 fprintf('X size rows=%d cols=%d\n', size(X, 1), size(X, 2));
 
+[prob, index] = max(X * all_theta', [], 2);
 
-for label = 1:num_labels
-  p(label, :) = max(X(label, :) * all_theta(label, :)');
-end
+p = index;
 
 
 
