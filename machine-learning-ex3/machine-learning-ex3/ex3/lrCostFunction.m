@@ -22,7 +22,7 @@ alpha = 0.01;
 %       efficiently vectorized. For example, consider the computation
 %
 h = sigmoid(X * theta);
-J = (1/m) * ((-1 * y)' * log(h) - (1 - y)' * log(1 - h))
+non_reg_term = (1/m) * ((-1 * y)' * log(h) - (1 - y)' * log(1 - h));
 %
 %       Each row of the resulting matrix will contain the value of the
 %       prediction for that example. You can make use of this to vectorize
@@ -37,7 +37,7 @@ J = (1/m) * ((-1 * y)' * log(h) - (1 - y)' * log(1 - h))
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
-J = ( ((-1 * y)' * log(h) - (1 - y)' * log(1 - h)) * (1 / m)) + ( (lambda / (2*m)) * sum( theta(2:end) .^ 2) );
+J = non_reg_term + ( (lambda / (2*m)) * sum( theta(2:end) .^ 2) );
 
 reg_term = (lambda / m) * theta;
 reg_term(1, 1) = 0;
